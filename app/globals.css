@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { scroll-behavior: smooth; }
+  body { @apply bg-slate-950 text-slate-100 font-sans; }
+  .dark body { @apply bg-slate-950 text-slate-100; }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl;
+  }
+  .gradient-text {
+    @apply bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent;
+  }
+  .gradient-border {
+    @apply border border-transparent bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500;
+  }
+  .btn-primary {
+    @apply px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-semibold
+           hover:from-purple-500 hover:to-cyan-500 transition-all duration-300 hover:scale-105
+           hover:shadow-lg hover:shadow-purple-500/25;
+  }
+  .btn-outline {
+    @apply px-6 py-3 rounded-xl border border-purple-500/50 text-purple-300 font-semibold
+           hover:bg-purple-500/10 transition-all duration-300 hover:scale-105 hover:border-purple-400;
+  }
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold gradient-text mb-2;
+  }
+}
+
+@layer utilities {
+  .bg-grid {
+    background-image: linear-gradient(rgba(139,92,246,0.05) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(139,92,246,0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+  .glow-purple { box-shadow: 0 0 40px rgba(139,92,246,0.3); }
+  .glow-cyan { box-shadow: 0 0 40px rgba(6,182,212,0.3); }
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0f172a; }
+::-webkit-scrollbar-thumb { background: linear-gradient(#7c3aed, #06b6d4); border-radius: 3px; }
